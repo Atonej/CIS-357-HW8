@@ -1,12 +1,18 @@
 //
 //  AppDelegate.swift
-//  conversionCalcHW8
+//  HW3-Solution
 //
-//  Created by CIS Student on 11/5/18.
-//  Copyright © 2018 AnthonyAtone. All rights reserved.
+//  Created by Jonathan Engelsma on 9/7/18.
+//  Copyright © 2018 Jonathan Engelsma. All rights reserved.
 //
 
 import UIKit
+
+let BACKGROUND_COLOR = UIColor.init(red:0.000, green:0.369, blue:0.420,
+                                    alpha:1.00) // Blueish
+let FOREGROUND_COLOR = UIColor.init(red: 0.937, green: 0.820,
+                                    blue: 0.576, alpha: 1.0)  // Tannish
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        // make the status bar more readable against darker background.
+        application.statusBarStyle = UIStatusBarStyle.lightContent
+        
+        let navAppearance = UINavigationBar.appearance()
+        navAppearance.barTintColor = BACKGROUND_COLOR
+        navAppearance.tintColor = FOREGROUND_COLOR
+        navAppearance.isTranslucent = false
+        navAppearance.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
         return true
     }
 
@@ -41,6 +54,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    
 
 }
+
+
 
